@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Grid {
     private int M; // Nombre de lignes
     private int N; // Nombre de colonnes
