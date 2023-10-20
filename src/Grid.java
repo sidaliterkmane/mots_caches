@@ -30,7 +30,7 @@ public class Grid {
         return grid[row][col];
     }
 
-    //Trouve toutes les cellules voisines d'une cellule donnee
+    // Trouve toutes les cellules voisines d'une cellule donnee
     public List<Cell> getNeighbors(Cell cell) {
         // Une liste qui stoque les cellules voisines
         List<Cell> neighbors = new ArrayList<>();
