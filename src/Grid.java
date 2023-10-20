@@ -2,14 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Grid {
-    private int rows; // Nombre de lignes
-    private int cols; // Nombre de colonnes
-    private Cell[][] grid;
 
-    public Grid(int rows, int cols) {
-        this.rows = rows;
-        this.cols = cols;
-        this.grid = new Cell[rows][cols];
     }
 
     public int getRows() {
