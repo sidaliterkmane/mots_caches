@@ -48,6 +48,4 @@ public class Main {
             System.out.println("(" + neighbor.getRow() + ", " + neighbor.getCol() + ") -> '" + neighbor.getValue() + "'");
         }
     }
-
-
 }
