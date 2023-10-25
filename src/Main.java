@@ -35,6 +35,19 @@ public class Main {
             }
             System.out.println();  // Move to the next line after printing a row
         }
+        // Example: Printing neighbors for the cell at (1,1)
+        printNeighbors(grid, grid.getCell(1, 1));
     }
+
+
+    // Helper method to print neighbors of a given cell in a grid
+    private static void printNeighbors(Grid grid, Cell cell) {
+        List<Cell> neighbors = grid.getNeighbors(cell);
+        System.out.println("Neighbors of cell (" + cell.getRow() + ", " + cell.getCol() + ") with value '" + cell.getValue() + "':");
+        for (Cell neighbor : neighbors) {
+            System.out.println("(" + neighbor.getRow() + ", " + neighbor.getCol() + ") -> '" + neighbor.getValue() + "'");
+        }
+    }
+
 
 }
