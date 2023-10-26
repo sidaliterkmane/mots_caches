@@ -9,9 +9,9 @@ import java.util.Map;
 // Trie class for a standard Trie with character nodes
 public class Trie {
 
-    private static class TrieNode {
-        private Map<Character, TrieNode> children; // Map for children nodes
-        private boolean isWord; // Boolean for marking word nodes; remove the prefix restriction
+    public static class TrieNode {
+        public Map<Character, TrieNode> children; // Map for children nodes
+        public boolean isWord; // Boolean for marking word nodes; remove the prefix restriction
 
         // Constructor
         public TrieNode() {
@@ -25,7 +25,7 @@ public class Trie {
         }
     }
 
-    private final TrieNode root = new TrieNode(); // root of the Trie
+    public final TrieNode root = new TrieNode(); // root of the Trie
 
     public void insert( String word ) {
         // insert a word

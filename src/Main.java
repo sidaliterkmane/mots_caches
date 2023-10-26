@@ -1,5 +1,6 @@
 import java.io.File;
 import java.util.List;
+import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,28 +20,39 @@ public class Main {
         List<Grid> grids = fileManager.getGrids();
         List<List<String>> wordLists = fileManager.getWordLists();
 
-        // Imprime les grilles et les listes de mots
+        // Pour chaque grille et liste de mots, execute la recherche de mots et imprime le resultat
         for (int i = 0; i < grids.size(); i++) {
-            printGrid(grids.get(i));
-            System.out.println("Words to search : " + wordLists.get(i));
-            System.out.println("---------");
+            Grid grid = grids.get(i);
+            List<String> wordList = wordLists.get(i);
+
+            WordSearch wordSearch = new WordSearch(grid, wordList);
+
+            // Execute la recherche de mots
+            TreeSet<String> results = wordSearch.findWords();
+
+            // Imprime le resultat dans le format specifie dans le TP
+            System.out.println("Query " + (i + 1) + ":");
+            for (String result : results) {
+                System.out.println(result);
+            }
+            System.out.println();  // Separe les resultats des differents queries avec une ligne vide
         }
     }
 
-    // Helper method pour imprimer une grid
+    // Helper method pour imprimer une grille
     private static void printGrid(Grid grid) {
         for (int i = 0; i < grid.getRows(); i++) {
             for (int j = 0; j < grid.getCols(); j++) {
                 System.out.print(grid.getCell(i, j).getValue() + " ");
             }
-            System.out.println();  // Move to the next line after printing a row
+            System.out.println();  // Saute une ligne apres avoir imprime une rangee
         }
-        // Example: Printing neighbors for the cell at (1,1)
+        // Ex: Imprime neighbors pour la cellule (1,1)
         printNeighbors(grid, grid.getCell(1, 1));
     }
 
 
-    // Helper method to print neighbors of a given cell in a grid
+    // Helper method qui imprime les voisins d'une cellule donnee
     private static void printNeighbors(Grid grid, Cell cell) {
         List<Cell> neighbors = grid.getNeighbors(cell);
         System.out.println("Neighbors of cell (" + cell.getRow() + ", " + cell.getCol() + ") with value '" + cell.getValue() + "':");
