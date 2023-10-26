@@ -10,7 +10,10 @@ public class WordSearch {
     // Constructor
     public WordSearch(Grid grid, List<String> wordList) {
         this.grid = grid;
-        this.trie = new Trie(wordList.toArray(new String[0])); // Convertit wordList en un array et instatie le Trie
+        // Convertit wordList en un array et instatie le Trie
+        // Puis nous allons comparer chaque cellule de la grille avec un noeud du Trie, si ca match,
+        // on continue la recherche, sinon, on s'arrete
+        this.trie = new Trie(wordList.toArray(new String[0]));
     }
 
     /**
@@ -55,7 +58,7 @@ public class WordSearch {
     /**
      * Initie la recherche de mot a partir de chaque cellule de la grille
      *
-     * @return TreeSet contenant les mots trouves et leur chemin
+     * @return TreeSet contenant les mots trouves et leur chemin (en ordre lexicographique)
      */
     public TreeSet<String> findWords() {
         TreeSet<String> results = new TreeSet<>();
