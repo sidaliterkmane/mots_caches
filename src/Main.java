@@ -1,5 +1,9 @@
 // Sid Ali Terkmane et Léane Lavigne - 2023/10/26
 
+// Ce programme à pour but de résoudre un jeu de mots cachés. Prends en entrée un fichier contenant des grilles de
+// mots cachés ainsi des listes de mots à trouver dans chaque grille. Imprime chaque possibilité de chemin
+// à prendre pour chacun des mots en ordre lexicographique.
+
 // Packages utilisés dans "Main".
 import java.io.File;
 import java.util.List;
