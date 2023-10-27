@@ -54,8 +54,11 @@ public class WordSearch {
             results.add(currentWord.toString() + " " + newPath.substring(0, newPath.length() - 2)); // Enlève le dernier "->".
         }
 
-        // Cherche les voisins de la cellule actuelle, incluant elle-même.
+        // Cherche les voisins de la cellule actuelle.
         List<Cell> neighbors = grid.getNeighbors(grid.getCell(i, j));
+
+        // Inclure la cellule actuelle en tant que voisin (en accordance avec la spécification)
+        neighbors.add(grid.getCell(i, j));
 
         // Pour chaque voisin, (incluant la cellule elle-même), faire un appel recursif de la méthode "search".
         for (Cell neighbor : neighbors) {
