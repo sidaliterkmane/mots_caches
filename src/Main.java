@@ -1,3 +1,5 @@
+// Sid Ali Terkmane et Léane Lavigne - 2023/10/26
+
 // Packages utilisés dans "Main".
 import java.io.File;
 import java.util.List;
@@ -38,7 +40,7 @@ public class Main {
             for (String result : results) {
                 System.out.println(result);
             }
-            System.out.println();  // Separe les résultats des differents queries avec une ligne vide.
+            System.out.println();  // Sépare les résultats des differents queries avec une ligne vide.
         }
     }
 }

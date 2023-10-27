@@ -7,10 +7,10 @@ import java.util.Arrays;
 import java.util.List;
 
 // La classe "FileManager" va s'occuper de faire la gestion du fichier d'entrées.
-public class FileManager{
+public class FileManager {
     private String fileName;                // Nom du fichier.
-    private List<Grid> grids;               // Liste de grilles.
-    private List<List<String>> wordLists;   // Liste de listes de mots recherchés.
+    private List<Grid> grids;               // Liste de grilles provenant du fichier d'entrées.
+    private List<List<String>> wordLists;   // Liste de listes de mots recherchés provenant du fichier d'entrées.
 
     //Constructeur.
     public FileManager(String fileName) {
@@ -34,7 +34,7 @@ public class FileManager{
                 int rows = Integer.parseInt(dimensions[0]);
                 int cols = Integer.parseInt(dimensions[1]);
 
-                // Créer une nouvelle grille avec les dimensions données
+                // Créer une nouvelle grille avec les dimensions données.
                 Grid grid = new Grid(rows, cols);
 
                 // Lire chaque caractères d'une grille en lisant chaque colonne d'une rangée
@@ -42,7 +42,7 @@ public class FileManager{
                 for (int i = 0; i < rows; i++) {
                     line = reader.readLine();
                     for (int j = 0; j < cols; j++) {
-                        grid.setCell(i, j, line.charAt(j * 2)); // j * 2 pour ne pas tenir compte des espaces
+                        grid.setCell(i, j, line.charAt(j * 2)); // j * 2 pour ne pas tenir compte des espaces.
                     }
                 }
 
